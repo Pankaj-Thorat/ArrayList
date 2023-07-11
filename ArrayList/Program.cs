@@ -28,7 +28,34 @@ namespace ArrayList
             Console.WriteLine("After removing");
             foreach (int i in numbers) { Console.WriteLine(i); }
 
-           
+            //Dictionary
+            Dictionary<string, int> mydict = new Dictionary<string, int>();
+            mydict = DictionaryClass.AddElements(mydict);
+
+            DictionaryClass.AddElements(mydict);
+
+            foreach (KeyValuePair<string, int> dict in mydict)
+            {
+                Console.WriteLine("name: " + dict.Key + "\tMarks : " + dict.Value);
+            }
+
+            //update
+            mydict["Pankaj"] = 99;
+            Console.WriteLine("After Update--");
+
+            foreach (KeyValuePair<string, int> dict in mydict)
+            {
+                Console.WriteLine("name: " + dict.Key + "\tMarks : " + dict.Value);
+            }
+            //delete
+            mydict.Remove("Kiran");
+
+            Console.WriteLine("After Delete--");
+
+            foreach (KeyValuePair<string, int> dict in mydict)
+            {
+                Console.WriteLine("name: " + dict.Key + "\tMarks : " + dict.Value);
+            }
         }
     }
 }
